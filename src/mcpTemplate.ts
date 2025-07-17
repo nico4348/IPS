@@ -1,17 +1,19 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { PromocionesTool } from "./features/tools/PromocionesTool.js";
 import { TransportManager } from "./configs/transports/transportManager.js";
+import { SueroTerapiaDetoxTool } from "./features/tools/SueroTerapiaDetoxTool.js";
+import { TerapiasNaturalesTool } from "./features/tools/TerapiasNaturalesTool.js";
+import { SueroTerapiaAntiageTool } from "./features/tools/SueroTerapiaAntiageTool.js";
+import { CosmetologiaFallBackTool } from "./features/tools/CosmetologiaFallBackTool.js";
+import { SueroTerapiaMetabolicaTool } from "./features/tools/SueroTerapiaMetabolicaTool.js";
+import { TratamientosCorporalesTool } from "./features/tools/TratamientosCorporalesTool.js";
+import { SueroTerapiaAntiestresTool } from "./features/tools/SueroTerapiaAntiestresTool.js";
+import { SueroTerapiaInfoGeneralTool } from "./features/tools/SueroTerapiaInfoGeneralTool.js";
 import { handleStreamableHttpRequest } from "./configs/transports/streamableHttpTransport.js";
 import { handleSseRequest, handleSsePostRequest } from "./configs/transports/sseTransport.js";
-import { CosmetologiaFallBackTool } from "./features/tools/CosmetologiaFallBackTool.js";
-import { SueroTerapiaAntiageTool } from "./features/tools/SueroTerapiaAntiageTool.js";
-import { SueroTerapiaAntiestresTool } from "./features/tools/SueroTerapiaAntiestresTool.js";
 import { SueroTerapiaAntiinflamatoriaTool } from "./features/tools/SueroTerapiaAntiinflamatoriaTool.js";
-import { SueroTerapiaDetoxTool } from "./features/tools/SueroTerapiaDetoxTool.js";
-import { SueroTerapiaInfoGeneralTool } from "./features/tools/SueroTerapiaInfoGeneralTool.js";
-import { SueroTerapiaMetabolicaTool } from "./features/tools/SueroTerapiaMetabolicaTool.js";
-import { TerapiasNaturalesTool } from "./features/tools/TerapiasNaturalesTool.js";
-import { TratamientosCorporalesTool } from "./features/tools/TratamientosCorporalesTool.js";
 import { TratamientosFacialesDepilacionTool } from "./features/tools/TratamientosFacialesDepilacionTool.js";
+
 import dotenv from "dotenv";
 dotenv.config();
 import express, { type Request, type Response } from "express";
@@ -38,6 +40,7 @@ const getServer = () => {
 	TerapiasNaturalesTool(server);
 	TratamientosCorporalesTool(server);
 	TratamientosFacialesDepilacionTool(server);
+	PromocionesTool(server);
 
 	console.log("🔧 Servidor MCP compatible configurado con herramientas de compatibilidad");
 	return server;
@@ -75,7 +78,7 @@ app.get("/", (req: Request, res: Response) => {
 			{
 				name: "Streamable HTTP",
 				version: "2025-03-26",
-				endpoint: `https://h86z0w7m-3000.use2.devtunnels.ms/mcp`,
+				endpoint: `${process.env.URL}/mcp`,
 			},
 			{
 				name: "HTTP+SSE (deprecated)",
