@@ -1,5 +1,4 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { PromocionesTool } from "./features/tools/PromocionesTool.js";
 import { TransportManager } from "./configs/transports/transportManager.js";
 import { SueroTerapiaDetoxTool } from "./features/tools/SueroTerapiaDetoxTool.js";
 import { TerapiasNaturalesTool } from "./features/tools/TerapiasNaturalesTool.js";
@@ -13,11 +12,11 @@ import { handleStreamableHttpRequest } from "./configs/transports/streamableHttp
 import { handleSseRequest, handleSsePostRequest } from "./configs/transports/sseTransport.js";
 import { SueroTerapiaAntiinflamatoriaTool } from "./features/tools/SueroTerapiaAntiinflamatoriaTool.js";
 import { TratamientosFacialesDepilacionTool } from "./features/tools/TratamientosFacialesDepilacionTool.js";
+import express, { type Request, type Response } from "express";
+import cors from "cors";
 
 import dotenv from "dotenv";
 dotenv.config();
-import express, { type Request, type Response } from "express";
-import cors from "cors";
 
 const PORT = process.env.PORT || 3000;
 
@@ -40,7 +39,6 @@ const getServer = () => {
 	TerapiasNaturalesTool(server);
 	TratamientosCorporalesTool(server);
 	TratamientosFacialesDepilacionTool(server);
-	PromocionesTool(server);
 
 	console.log("🔧 Servidor MCP compatible configurado con herramientas de compatibilidad");
 	return server;

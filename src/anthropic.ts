@@ -1,9 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { createDiffieHellmanGroup } from "crypto";
+import { PromocionesTool } from "./features/tools/PromocionesTool.js";
 import readline from "readline";
 import dotenv from "dotenv";
 dotenv.config();
-
 // Validate environment variables
 if (!process.env.ANTHROPIC_API_KEY) {
 	console.error("Error: Falta la variable de entorno ANTHROPIC_API_KEY.");
@@ -27,7 +26,7 @@ export const llmAnthropic = async (userMsg: string) => {
 
 	const response = await client.beta.messages.create({
 		model: "claude-sonnet-4-20250514",
-		max_tokens: 200,
+		max_tokens: 500,
 		system: `
 <fecha>${new Date().toLocaleDateString("es-CO", {
 			year: "numeric",
@@ -69,8 +68,8 @@ export const llmAnthropic = async (userMsg: string) => {
     <category name="Tratamientos Corporales">Moldeo, PEFE, Levantamiento de Glúteos.</category>
     <category name="Tratamientos Faciales y Depilación">Limpieza Facial, Rejuvenecimiento, Dermapen, Depilación.</category>
     <category name="Cosmetología General">Categorización de tratamientos estéticos generales.</category>
-    <category name="Promociones"> Promociones </category>
-    </available_services_info>
+    <category name="Promociones"> ${await PromocionesTool()} </category>
+  </available_services_info>
 
   <communication_guidelines>
     <language>Usa español profesional, claro y directo. Sin emojis, íconos ni asteriscos.</language>
@@ -80,6 +79,8 @@ export const llmAnthropic = async (userMsg: string) => {
       **Inicia de forma directa, invitando a la especificación de manera natural sin una cadena de preguntas.** Ofrece información relevante y específica. **Si el usuario no es claro, presenta opciones de forma declarativa para guiar su interés.**
 
       **Prioriza escuchar y proponer soluciones. No seas insistente con el agendamiento ni repitas constantemente el enlace para agendar.**
+
+      **Menciona sutilmente la disponibilidad de promociones generales o, si el servicio discutido tiene una promoción específica, menciónala de manera natural como un valor añadido.**
 
       **Espera una señal de interés genuino del usuario (ej. "quiero saber el precio", "me interesa ese servicio", "quiero contratar") antes de ofrecer información final como precios específicos o el enlace directo para agendar.**
 
