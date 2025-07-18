@@ -43,7 +43,7 @@ export function SueroTerapiaInfoGeneralTool(server: McpServer) {
   <tratamientos_medicina_alternativa>
     <categoria>
       <nombre>Sueroterapias</nombre>
-      <tratamientos>Suero Detox Básico, Suero Detox Avanzado, Suero Metabólico Tipo, Suero Metabólico R1 y R2, Suero Antiinflamatorio, Suero Antiage E y F, Suero Antiestrés</tratamientos>
+      <tratamientos>Suero Personalizado,Vitamina C,Vitamina C Combinado, Suero Inmunológico,Suero Detox Básico, Suero Detox Avanzado, Suero Metabólico Tipo, Suero Metabólico R1, Suero Metabólico R2, Suero Metabólico R3, Suero Metabólico G, Suero Metabólico C, Suero Metabólico O, Suero Metabólico D, Suero Metabólico T, Suero Antiinflamatorio, Suero Antiage E, Suero Antiage F, Suero Antiestrés</tratamientos>
     </categoria>
     <categoria>
       <nombre>Terapias Naturales</nombre>
@@ -54,11 +54,11 @@ export function SueroTerapiaInfoGeneralTool(server: McpServer) {
 <ejemplos_respuesta>
   <ejemplo>
     <escenario>Tratamiento no disponible</escenario>
-    <respuesta>"Lo sentimos, no tenemos esta sueroterapia en específico, pero puedo ofrecerte estas otras opciones que sí manejamos y en las cuales puedo asesorarte como Suero Detox Básico, Suero Detox Avanzado, Suero Metabólico Tipo, Suero Metabólico R1, Suero Metabólico R2, Suero Antiinflamatorio, Suero Antiage E, Suero Antiage F, Suero Antiestrés."</respuesta>
+    <respuesta>"Lo sentimos, no tenemos esta sueroterapia en específico, pero puedo ofrecerte estas otras opciones que sí manejamos y en las cuales puedo asesorarte como Suero Detox Básico, Suero Detox Avanzado, Suero Metabólico Tipo, Suero Metabólico R1, Suero Metabólico R2, Suero Metabólico R3, Suero Metabólico G, Suero Metabólico C, Suero Metabólico O, Suero Metabólico D, Suero Metabólico T, Suero Antiinflamatorio, Suero Antiage E, Suero Antiage F, Suero Antiestrés, Suero Personalizado, Vitamina C, Vitamina C Combinado, Suero Inmunológico."</respuesta>
   </ejemplo>
   <ejemplo>
     <escenario>Si el usuario solicita información de medicina alternativa o tipos de sueroterapias o terapias naturales ofrecen</escenario>
-    <respuesta>"Actualmente contamos con las siguientes opciones de sueroterapia:\n\nSuero Detox Básico, Suero Detox Avanzado, Suero Metabólico Tipo, Suero Metabólico R1, Suero Metabólico R2, Suero Antiinflamatorio, Suero Antiage E, Suero Antiage F, Suero Antiestrés.\n\nTambién ofrecemos terapias naturales complementarias como:\nAcupuntura o Homeopatía\n\nSi deseas, dime cuál te interesa y con gusto te doy más detalles."</respuesta>
+    <respuesta>"Actualmente contamos con las siguientes opciones de sueroterapia:\n\nSuero Detox Básico, Suero Detox Avanzado, Suero Metabólico Tipo, Suero Metabólico R1, Suero Metabólico R2, Suero Metabólico R3, Suero Metabólico G, Suero Metabólico C, Suero Metabólico O, Suero Metabólico D, Suero Metabólico T, Suero Antiinflamatorio, Suero Antiage E, Suero Antiage F, Suero Antiestrés, Suero Personalizado, Vitamina C, Vitamina C Combinado, Suero Inmunológico.\n\nTambién ofrecemos terapias naturales complementarias como:\nAcupuntura o Homeopatía\n\nSi deseas, dime cuál te interesa y con gusto te doy más detalles."</respuesta>
   </ejemplo>
 </ejemplos_respuesta>
                     `,

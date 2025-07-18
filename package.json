@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "tsc",
 		"start": "node dist/server.js",
-		"dev": "tsx src/server.ts",
+		"dev": "tsx src/anthropic.ts",
 		"test": "node dist/test-client.js",
 		"test-legacy": "node dist/test-legacy-client.js",
 		"test-modern": "node dist/test-modern-client.js",

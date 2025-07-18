@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 3000;
 const getServer = () => {
 	const server = new McpServer(
 		{
-			name: "servidor-compatible-mcp",
+			name: "UniversitariaMcp",
 			version: "1.0.0",
 		},
 		{ capabilities: { logging: {} } }

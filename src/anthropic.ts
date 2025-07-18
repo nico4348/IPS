@@ -151,7 +151,7 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 
-console.log("Chat iniciado. Escribe tu mensaje para Viviana:");
+console.log("Chat iniciado. Escribe tu mensaje para Camila:");
 
 const chatLoop = async () => {
 	rl.question("> ", async (input) => {
@@ -164,7 +164,7 @@ const chatLoop = async () => {
 		const lastContent = response.content[response.content.length - 1];
 		const assistantMsg =
 			lastContent?.type === "text" ? lastContent.text : "[Respuesta no disponible]";
-		console.log(`Viviana: ${assistantMsg}`);
+		console.log(`Camila: ${assistantMsg}`);
 		chatLoop();
 	});
 };
